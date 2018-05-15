@@ -7,8 +7,9 @@
     <AssemblyVersion>0.12.8.0</AssemblyVersion>
     <FileVersion>0.12.8.0</FileVersion>
     <PackageProjectUrl>https://github.com/daletskyi/KinesisProducerNet</PackageProjectUrl>
-    <PackageTags>amazon kinesis producer</PackageTags>
-    <Version>0.12.8-alpha</Version>
+    <PackageLicenseUrl>https://github.com/daletskyi/KinesisProducerNet/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageTags>amazon kinesis producer netstandard</PackageTags>
+    <Version>0.12.8</Version>
     <Title>KinesisProducerNet</Title>
     <Description>Unofficial Amazon Kinesis Producer Library (KPL) for .NET. This is a core package which doesn't contain native executable, you also need to install separate package to run under specific platform (ex. KinesisProducerNet.Linux).</Description>
   </PropertyGroup>

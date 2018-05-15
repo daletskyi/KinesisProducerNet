@@ -4,12 +4,12 @@
     <PackageId>KinesisProducerNet.Windows</PackageId>
     <Authors>Serhii Daletskyi</Authors>
     <TargetFramework>netstandard1.3</TargetFramework>
-    <Version>0.12.8-alpha</Version>
+    <Version>0.12.8</Version>
     <Title>KinesisProducerNet.Windows</Title>
     <Description>Unofficial Amazon Kinesis Producer Library (KPL) for .NET. This package contains native executable to run on Windows.</Description>
     <PackageProjectUrl>https://github.com/daletskyi/KinesisProducerNet</PackageProjectUrl>
-    <PackageTags>amazon kinesis producer</PackageTags>
-    <Company />
+    <PackageLicenseUrl>https://github.com/daletskyi/KinesisProducerNet/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageTags>amazon kinesis producer netstandard</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
