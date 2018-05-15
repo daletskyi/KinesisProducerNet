@@ -1,4 +1,4 @@
-# KinesisProducerNet
+# KinesisProducerNet [![Build Status](https://travis-ci.org/daletskyi/KinesisProducerNet.svg?branch=master)](https://travis-ci.org/daletskyi/KinesisProducerNet)
 
 KinesisProducerNet is a .NET port of [Amazon Kinesis Producer Library] targeting .NET Standard 1.3+ and can be run on Windows, Linux and macOs.
 
