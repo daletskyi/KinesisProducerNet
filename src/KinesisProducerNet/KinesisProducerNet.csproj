@@ -1,0 +1,107 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>KinesisProducerNet</PackageId>
+    <Authors>Serhii Daletskyi</Authors>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <AssemblyVersion>0.12.8.0</AssemblyVersion>
+    <FileVersion>0.12.8.0</FileVersion>
+    <PackageProjectUrl>https://github.com/daletskyi/KinesisProducerNet</PackageProjectUrl>
+    <PackageTags>amazon kinesis producer</PackageTags>
+    <Version>0.12.8-alpha</Version>
+    <Title>KinesisProducerNet</Title>
+    <Description>Unofficial Amazon Kinesis Producer Library (KPL) for .NET. This is a core package which doesn't contain native executable, you also need to install separate package to run under specific platform (ex. KinesisProducerNet.Linux).</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\cacerts\062cdee6.0" />
+    <None Remove="Resources\cacerts\09789157.0" />
+    <None Remove="Resources\cacerts\116bf586.0" />
+    <None Remove="Resources\cacerts\1d3472b9.0" />
+    <None Remove="Resources\cacerts\244b5494.0" />
+    <None Remove="Resources\cacerts\2c543cd1.0" />
+    <None Remove="Resources\cacerts\2e4eed3c.0" />
+    <None Remove="Resources\cacerts\3513523f.0" />
+    <None Remove="Resources\cacerts\480720ec.0" />
+    <None Remove="Resources\cacerts\4a6481c9.0" />
+    <None Remove="Resources\cacerts\4bfab552.0" />
+    <None Remove="Resources\cacerts\5ad8a5d6.0" />
+    <None Remove="Resources\cacerts\607986c7.0" />
+    <None Remove="Resources\cacerts\653b494a.0" />
+    <None Remove="Resources\cacerts\6d41d539.0" />
+    <None Remove="Resources\cacerts\75d1b2ed.0" />
+    <None Remove="Resources\cacerts\76cb8f92.0" />
+    <None Remove="Resources\cacerts\7d0b38bd.0" />
+    <None Remove="Resources\cacerts\7f3d5d1d.0" />
+    <None Remove="Resources\cacerts\8867006a.0" />
+    <None Remove="Resources\cacerts\8cb5ee0f.0" />
+    <None Remove="Resources\cacerts\9d04f354.0" />
+    <None Remove="Resources\cacerts\ad088e1d.0" />
+    <None Remove="Resources\cacerts\b0e59380.0" />
+    <None Remove="Resources\cacerts\b1159c4c.0" />
+    <None Remove="Resources\cacerts\b204d74a.0" />
+    <None Remove="Resources\cacerts\ba89ed3b.0" />
+    <None Remove="Resources\cacerts\c01cdfa2.0" />
+    <None Remove="Resources\cacerts\c089bbbd.0" />
+    <None Remove="Resources\cacerts\c0ff1f52.0" />
+    <None Remove="Resources\cacerts\cbeee9e2.0" />
+    <None Remove="Resources\cacerts\cbf06781.0" />
+    <None Remove="Resources\cacerts\ce5e74ef.0" />
+    <None Remove="Resources\cacerts\dd8e9d41.0" />
+    <None Remove="Resources\cacerts\de6d66f3.0" />
+    <None Remove="Resources\cacerts\e2799e36.0" />
+    <None Remove="Resources\cacerts\f081611a.0" />
+    <None Remove="Resources\cacerts\f387163d.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\cacerts\062cdee6.0" />
+    <EmbeddedResource Include="Resources\cacerts\09789157.0" />
+    <EmbeddedResource Include="Resources\cacerts\116bf586.0" />
+    <EmbeddedResource Include="Resources\cacerts\1d3472b9.0" />
+    <EmbeddedResource Include="Resources\cacerts\244b5494.0" />
+    <EmbeddedResource Include="Resources\cacerts\2c543cd1.0" />
+    <EmbeddedResource Include="Resources\cacerts\2e4eed3c.0" />
+    <EmbeddedResource Include="Resources\cacerts\3513523f.0" />
+    <EmbeddedResource Include="Resources\cacerts\480720ec.0" />
+    <EmbeddedResource Include="Resources\cacerts\4a6481c9.0" />
+    <EmbeddedResource Include="Resources\cacerts\4bfab552.0" />
+    <EmbeddedResource Include="Resources\cacerts\5ad8a5d6.0" />
+    <EmbeddedResource Include="Resources\cacerts\607986c7.0" />
+    <EmbeddedResource Include="Resources\cacerts\653b494a.0" />
+    <EmbeddedResource Include="Resources\cacerts\6d41d539.0" />
+    <EmbeddedResource Include="Resources\cacerts\75d1b2ed.0" />
+    <EmbeddedResource Include="Resources\cacerts\76cb8f92.0" />
+    <EmbeddedResource Include="Resources\cacerts\7d0b38bd.0" />
+    <EmbeddedResource Include="Resources\cacerts\7f3d5d1d.0" />
+    <EmbeddedResource Include="Resources\cacerts\8867006a.0" />
+    <EmbeddedResource Include="Resources\cacerts\8cb5ee0f.0" />
+    <EmbeddedResource Include="Resources\cacerts\9d04f354.0" />
+    <EmbeddedResource Include="Resources\cacerts\ad088e1d.0" />
+    <EmbeddedResource Include="Resources\cacerts\b0e59380.0" />
+    <EmbeddedResource Include="Resources\cacerts\b1159c4c.0" />
+    <EmbeddedResource Include="Resources\cacerts\b204d74a.0" />
+    <EmbeddedResource Include="Resources\cacerts\ba89ed3b.0" />
+    <EmbeddedResource Include="Resources\cacerts\c01cdfa2.0" />
+    <EmbeddedResource Include="Resources\cacerts\c089bbbd.0" />
+    <EmbeddedResource Include="Resources\cacerts\c0ff1f52.0" />
+    <EmbeddedResource Include="Resources\cacerts\cbeee9e2.0" />
+    <EmbeddedResource Include="Resources\cacerts\cbf06781.0" />
+    <EmbeddedResource Include="Resources\cacerts\ce5e74ef.0" />
+    <EmbeddedResource Include="Resources\cacerts\dd8e9d41.0" />
+    <EmbeddedResource Include="Resources\cacerts\de6d66f3.0" />
+    <EmbeddedResource Include="Resources\cacerts\e2799e36.0" />
+    <EmbeddedResource Include="Resources\cacerts\f081611a.0" />
+    <EmbeddedResource Include="Resources\cacerts\f387163d.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Core" Version="3.3.22" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.2" />
+    <PackageReference Include="protobuf-net" Version="2.3.7" />
+    <PackageReference Include="System.Diagnostics.Process" Version="4.3.0" />
+    <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

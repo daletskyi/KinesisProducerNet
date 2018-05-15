@@ -1,0 +1,46 @@
+syntax = "proto2";
+package Aws.Kinesis.Protobuf;
+
+option java_package = "com.amazonaws.services.kinesis.producer.protobuf";
+
+message AdditionalDimension {
+  required string key         = 1;
+  required string value       = 2;
+  required string granularity = 3;
+}
+
+message Configuration {
+  repeated AdditionalDimension additional_metric_dims = 128;
+
+  optional bool aggregation_enabled = 1 [default = true];
+  optional uint64 aggregation_max_count = 2 [default = 4294967295];
+  optional uint64 aggregation_max_size = 3 [default = 51200];
+  optional string cloudwatch_endpoint = 4 [default = ""];
+  optional uint64 cloudwatch_port = 5 [default = 443];
+  optional uint64 collection_max_count = 6 [default = 500];
+  optional uint64 collection_max_size = 7 [default = 5242880];
+  optional uint64 connect_timeout = 8 [default = 6000];
+  optional bool enable_core_dumps = 9 [default = false];
+  optional bool fail_if_throttled = 10 [default = false];
+  optional string kinesis_endpoint = 11 [default = ""];
+  optional uint64 kinesis_port = 12 [default = 443];
+  optional string log_level = 13 [default = "info"];
+  optional uint64 max_connections = 14 [default = 24];
+  optional string metrics_granularity = 15 [default = "shard"];
+  optional string metrics_level = 16 [default = "detailed"];
+  optional string metrics_namespace = 17 [default = "KinesisProducerLibrary"];
+  optional uint64 metrics_upload_delay = 18 [default = 60000];
+  optional uint64 min_connections = 19 [default = 1];
+  optional uint64 rate_limit = 20 [default = 150];
+  optional uint64 record_max_buffered_time = 21 [default = 100];
+  optional uint64 record_ttl = 22 [default = 30000];
+  optional string region = 23 [default = ""];
+  optional uint64 request_timeout = 24 [default = 6000];
+  optional bool verify_certificate = 25 [default = true];
+  enum ThreadConfig {
+    PER_REQUEST = 0;
+    POOLED = 1;
+  }
+  optional ThreadConfig thread_config = 26 [default = PER_REQUEST];
+  optional uint32 thread_pool_size = 27 [default = 64];
+}

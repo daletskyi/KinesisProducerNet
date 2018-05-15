@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>KinesisProducerNet.MacOs</PackageId>
+    <Authors>Serhii Daletskyi</Authors>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <Version>0.12.8-alpha</Version>
+    <Title>KinesisProducerNet.MacOs</Title>
+    <Description>Unofficial Amazon Kinesis Producer Library (KPL) for .NET. This package contains native executable to run on Mac.</Description>
+    <PackageProjectUrl>https://github.com/daletskyi/KinesisProducerNet</PackageProjectUrl>
+    <PackageTags>amazon kinesis producer</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\amazon-kinesis-producer-native-binaries\macos\kinesis_producer" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\amazon-kinesis-producer-native-binaries\macos\kinesis_producer" />
+  </ItemGroup>
+
+</Project>
