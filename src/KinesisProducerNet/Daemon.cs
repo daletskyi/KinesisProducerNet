@@ -303,7 +303,7 @@ namespace KinesisProducerNet
                 SecretKey = immutableCredentials.SecretKey
             };
 
-            if (awsCredentials is SessionAWSCredentials)
+            if (immutableCredentials.UseToken)
             {
                 creds.Token = immutableCredentials.Token;
             }
