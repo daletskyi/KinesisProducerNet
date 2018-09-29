@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\KinesisProducerNet.Linux\KinesisProducerNet.Linux.csproj" />
+    <ProjectReference Include="..\..\src\KinesisProducerNet.MacOs\KinesisProducerNet.MacOs.csproj" />
+    <ProjectReference Include="..\..\src\KinesisProducerNet.Windows\KinesisProducerNet.Windows.csproj" />
+    <ProjectReference Include="..\..\src\KinesisProducerNet\KinesisProducerNet.csproj" />
+  </ItemGroup>
+
+</Project>
