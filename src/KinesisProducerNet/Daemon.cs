@@ -32,7 +32,7 @@ namespace KinesisProducerNet
         protected CancellationTokenSource cancelTokenSource;
         protected CancellationToken processCancellationToken;
         protected byte[] receiveBuffer = new byte[8 * 1024 * 1024];
-        protected readonly ILogger logger = Logging.CreateLogger<Daemon>();
+        protected readonly ILogger logger;
 
         protected readonly BlockingCollection<Message> outgoingMessages =
             new BlockingCollection<Message>(new ConcurrentQueue<Message>());
@@ -63,7 +63,7 @@ namespace KinesisProducerNet
             this.environmentVariables = environmentVariables;
             this.cancelTokenSource = new CancellationTokenSource();
             this.processCancellationToken = cancelTokenSource.Token;
-
+            this.logger = Logging.CreateLogger<Daemon>(config.LogLevel);
             Task.Run(() =>
             {
                 try
@@ -155,8 +155,8 @@ namespace KinesisProducerNet
                 }
             });
 
-            this.stdOutReader = new LogInputStreamReader(process.StandardOutput, "StdOut", (log, message) => { log.LogInformation(message); }, this.logger);
-            this.stdErrReader = new LogInputStreamReader(process.StandardError, "StdErr", (log, message) => { log.LogError(message); }, this.logger);
+            this.stdOutReader = new LogInputStreamReader(process.StandardOutput, "StdOut", (log, message) => { log.LogInformation(message); }, this.config.LogLevel);
+            this.stdErrReader = new LogInputStreamReader(process.StandardError, "StdErr", (log, message) => { log.LogError(message); }, this.config.LogLevel);
 
             Task.Run(() => stdOutReader.Run(), processCancellationToken);
             Task.Run(() => stdErrReader.Run(), processCancellationToken);
