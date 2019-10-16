@@ -4,7 +4,7 @@ namespace KinesisProducerNet
 {
     public static class Logging
     {
-        public static ILoggerFactory LoggerFactory { get; } = new LoggerFactory().AddConsole(LogLevel.Debug);
-        public static ILogger CreateLogger<T>() => LoggerFactory.CreateLogger<T>();
+        public static ILoggerFactory LoggerFactory(LogLevel logLevel) => new LoggerFactory().AddConsole(logLevel);
+        public static ILogger CreateLogger<T>(LogLevel loglevel) => LoggerFactory(loglevel).CreateLogger<T>();
     }
 }

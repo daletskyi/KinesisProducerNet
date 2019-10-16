@@ -15,7 +15,7 @@ namespace KinesisProducerNet
 
         private readonly HashSet<string> watchedFiles;
         private readonly Timer ticker;
-        private readonly ILogger logger = Logging.CreateLogger<FileAgeManager>();
+        private readonly ILogger logger = Logging.CreateLogger<FileAgeManager>(LogLevel.None);
 
         private FileAgeManager()
         {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Amazon.Runtime;
 using KinesisProducerNet.Protobuf;
+using Microsoft.Extensions.Logging;
 
 namespace KinesisProducerNet
 {
@@ -163,7 +164,7 @@ namespace KinesisProducerNet
         /// Default: info
         /// Expected pattern: info|warning|error
         /// </summary>
-        public string LogLevel { get; set; } = "info";
+        public LogLevel LogLevel { get; set; } = LogLevel.Debug;
 
         /// <summary>
         /// Maximum number of connections to open to the backend. HTTP requests are sent in parallel over multiple connections.

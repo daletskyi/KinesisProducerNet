@@ -23,12 +23,13 @@ namespace KinesisProducerNet
             "ce5e74ef.0", "dd8e9d41.0", "de6d66f3.0", "e2799e36.0", "f081611a.0", "f387163d.0"
         };
 
-        private readonly ILogger logger = Logging.CreateLogger<CertificateExtractor>();
+        private readonly ILogger logger;
         public List<string> ExtractedCertificates { get; }
 
-        public CertificateExtractor()
+        public CertificateExtractor(LogLevel logLevel)
         {
             this.ExtractedCertificates = new List<string>();
+            this.logger = Logging.CreateLogger<CertificateExtractor>(logLevel);
         }
 
         public string ExtractCertificates(string tempDirectory)

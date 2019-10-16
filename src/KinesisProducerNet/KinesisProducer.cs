@@ -21,14 +21,13 @@ namespace KinesisProducerNet
         private static readonly BigInteger UINT_128_MAX = BigInteger.Pow(ulong.MaxValue, 2);
 
         private readonly KinesisProducerConfiguration config;
-        private readonly ILogger logger = Logging.CreateLogger<KinesisProducer>();
         private Daemon child;
         private string pathToTmpDir;
         private string pathToExecutable;
         private string pathToLibDir;
         private readonly Dictionary<string, string> envParams;
         private long messageNumber = 1;
-
+        private readonly ILogger logger;
         private readonly ConcurrentDictionary<long, FutureOperationResult> futureOperationResults =
             new ConcurrentDictionary<long, FutureOperationResult>();
 
@@ -39,6 +38,7 @@ namespace KinesisProducerNet
         public KinesisProducer(KinesisProducerConfiguration config)
         {
             this.config = config;
+            this.logger = Logging.CreateLogger<KinesisProducer>(config.LogLevel);
             this.logger.LogInformation($"Platform: {RuntimeInformation.OSDescription}. Arch: {RuntimeInformation.OSArchitecture}");
 
             var caDirectory = ExtractBinaries();
@@ -415,7 +415,7 @@ namespace KinesisProducerNet
                             }
                         }
 
-                        var certificateExtractor = new CertificateExtractor();
+                        var certificateExtractor = new CertificateExtractor(config.LogLevel);
                         var caDirectory = certificateExtractor.ExtractCertificates(pathToTmpDir);
 
                         watchFiles.AddRange(certificateExtractor.ExtractedCertificates);

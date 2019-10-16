@@ -2,6 +2,8 @@
 // Consider using 'partial classes' to extend these types
 // Input: config.proto
 
+using Microsoft.Extensions.Logging;
+
 #pragma warning disable CS1591, CS0612, CS3021
 
 namespace KinesisProducerNet.Protobuf
@@ -161,14 +163,14 @@ namespace KinesisProducerNet.Protobuf
 
         [global::ProtoBuf.ProtoMember(13, Name = @"log_level")]
         [global::System.ComponentModel.DefaultValue(@"info")]
-        public string LogLevel
+        public LogLevel LogLevel
         {
-            get { return __pbn__LogLevel ?? @"info"; }
-            set { __pbn__LogLevel = value; }
+            get { return __pbn__LogLevel; }
+            set => __pbn__LogLevel = value;
         }
         public bool ShouldSerializeLogLevel() => __pbn__LogLevel != null;
-        public void ResetLogLevel() => __pbn__LogLevel = null;
-        private string __pbn__LogLevel;
+        public void ResetLogLevel() => __pbn__LogLevel = LogLevel.None;
+        private LogLevel __pbn__LogLevel;
 
         [global::ProtoBuf.ProtoMember(14, Name = @"max_connections")]
         [global::System.ComponentModel.DefaultValue(24)]

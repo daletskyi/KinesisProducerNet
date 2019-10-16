@@ -8,7 +8,6 @@ namespace KinesisProducerNet
 {
     public class LogInputStreamReader
     {
-        private readonly ILogger logger = Logging.CreateLogger<LogInputStreamReader>();
 
         private static readonly Regex LevelRegex = new Regex(@"(?<level>trace|debug|info|warn(?:ing)?|error|fatal)",
             RegexOptions.Multiline | RegexOptions.Compiled | RegexOptions.IgnoreCase);
@@ -32,17 +31,17 @@ namespace KinesisProducerNet
         private volatile bool shuttingDown = false;
         private bool isReadingRecord;
         private readonly LinkedList<string> messageData = new LinkedList<string>();
-
+        private readonly ILogger logger;
         public LogInputStreamReader(
             StreamReader reader,
             string streamType,
             Action<ILogger, string> logFunction,
-            ILogger logger)
+            LogLevel logLevel)
         {
             this.reader = reader;
             this.streamType = streamType;
             this.logFunction = logFunction;
-            this.logger = logger;
+            this.logger = Logging.CreateLogger<LogInputStreamReader>(logLevel);
         }
 
         public void Run()
